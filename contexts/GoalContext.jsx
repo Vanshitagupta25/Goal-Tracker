@@ -8,6 +8,7 @@ export function GoalProvider({ children }) {
 
   useEffect(() => {
     const savedGoals = localStorage.getItem("goals");
+    console.log("saved goals from localStorage", savedGoals);
 
     if (savedGoals) {
       setGoals(JSON.parse(savedGoals));
@@ -18,28 +19,37 @@ export function GoalProvider({ children }) {
           id: "1", 
           title: "Solve 5 LeetCode problems",
           description: "Daily practice to improve DSA skills.",
-          status: "Pending",
-          image: null,
-          createdAt: new Date().toISOString(),
-          completed: false
+          status: "Completed",
+          image: "/leetode.png",
+          createdAt: new Date("2025-09-27"),
+          completed: true
         },
         { 
           id: "2",
           title: "Submit weekly project task", 
           description: "Finish and submit before Sunday.",
-          status: "Completed",
+          status: "Pending",
           image: null,
-          createdAt: new Date().toISOString(),
-          completed: true
+          createdAt: new Date("2025-09-27"),
+          completed: false
         },
         { 
           id: "3",
-          title: "Daily learn something new",
-          description: "Explore a new concept, tool, or technique daily.",
+          title: "Build Portfolio",
+          description: "It's Showcase your work, skills, and achievements in a visually appealing way",
           status: "Pending",
           image: null,
-          createdAt: new Date().toISOString(),
+          createdAt: new Date("2025-09-27"),
           completed: false
+        },
+         { 
+          id: "4",
+          title: "Build Zoom-clone",
+          description: "Video conderencing platform with calls, screen sharing, and chat",
+          status: "completed",
+          image: "/zoom-clone.jpg",
+          createdAt: new Date("2025-09-27"),
+          completed: true
         },
       ]);
     }

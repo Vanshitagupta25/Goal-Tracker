@@ -7,13 +7,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center">
           
-          <Link href="/" className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors">
-            <Target className="w-6 h-6 text-blue-400" />
+          <Link href="/" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+            <Target className="w-6 h-6" />
             <span className="font-semibold text-lg">Goal Tracker</span>
           </Link>
 
           
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6">
             <Link href="/" className="text-gray-300 hover:text-white transition-colors font-medium">
               Home
             </Link>
