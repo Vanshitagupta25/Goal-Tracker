@@ -38,16 +38,7 @@ export function GoalProvider({ children }) {
           title: "Build Portfolio",
           description: "It's Showcase your work, skills, and achievements in a visually appealing way",
           status: "Pending",
-          image: null,
-          createdAt: new Date("2025-09-27"),
-          completed: false
-        },
-         { 
-          id: "4",
-          title: "Build Zoom-clone",
-          description: "Video conderencing platform with calls, screen sharing, and chat",
-          status: "completed",
-          image: "/zoom-clone.jpg",
+          image: "/portfolio.jpg",
           createdAt: new Date("2025-09-27"),
           completed: true
         },
@@ -63,7 +54,7 @@ export function GoalProvider({ children }) {
   // Add a new goal
   const addGoal = (title, description, image = null) => {
     const newGoal = {
-      id: Date.now().toString(),
+      id: Date.now(),
       title,
       description,
       image: image ? URL.createObjectURL(image) : null,
