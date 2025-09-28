@@ -15,16 +15,8 @@ export default function Home() {
         {goals.map((goal) => (
           <div
             key={goal.id}
-            className="bg-gray-900 p-5 rounded-xl shadow-lg hover:shadow-xl transition flex flex-col justify-between relative"
+            className="bg-gray-900 p-5 rounded-xl shadow-lg hover:shadow-xl transition flex flex-col justify-between"
           >
-            <button
-              onClick={() => deleteGoal(goal.id)}
-              className="absolute top-3 right-3 p-1 text-red-500 hover:bg-red-500/10 rounded-full transition"
-              title="Delete goal"
-            >
-              <Trash2 className="w-4 h-4" />
-            </button>
-
             <div>
               <div className="flex items-center justify-between mb-2">
                 <h2 className="text-xl font-semibold">{goal.title}</h2>
@@ -50,19 +42,25 @@ export default function Home() {
               )}
             </div>
 
-            <div>
-              <div className="flex items-center justify-between">
-                <button
-                  onClick={() => toggleGoalStatus(goal.id)}
-                  className="px-3 py-1 text-sm rounded-md bg-blue-600 hover:bg-blue-700"
-                >
-                  {goal.completed ? "Mark Pending" : "Mark Complete"}
-                </button>
-              </div>
-              <p className="text-xs text-gray-500 mt-2">
-                Created: {new Date(goal.createdAt).toLocaleDateString()}
-              </p>
+            <div className="flex items-center justify-between mt-3">
+              <button
+                onClick={() => toggleGoalStatus(goal.id)}
+                className="px-3 py-1 text-sm rounded-md bg-blue-600 hover:bg-blue-700"
+              >
+                {goal.completed ? "Mark Pending" : "Mark Complete"}
+              </button>
+              <button
+                onClick={() => deleteGoal(goal.id)}
+                className="p-2 text-red-500 hover:bg-red-500/10 rounded-md transition"
+                title="Delete goal"
+              >
+                <Trash2 className="w-4 h-4" />
+              </button>
             </div>
+
+            <p className="text-xs text-gray-500 mt-2">
+              Created: {new Date(goal.createdAt).toLocaleDateString()}
+            </p>
           </div>
         ))}
       </div>
