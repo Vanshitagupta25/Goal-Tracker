@@ -11,11 +11,11 @@ export default function Home() {
         🎯 My Goals
       </h1>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {goals.map((goal) => (
           <div
             key={goal.id}
-            className="bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-xl transition relative"
+            className="bg-gray-900 p-5 rounded-lg shadow-md hover:shadow-xl transition space-y-3 relative"
           >
             {/* delete button */}
             <button onClick={() => deleteGoal(goal.id)}className="absolute top-2 right-3 p-1 text-red-500 hover:bg-red-500/10 rounded-full transition"
@@ -33,7 +33,7 @@ export default function Home() {
                 <img 
                   src={goal.image} 
                   alt="Goal proof" 
-                  className="w-full h-32 object-cover rounded-md border border-gray-700"
+                  className="w-full h-40 object-cover rounded-md border border-gray-700"
                 />
               </div>
             )}
